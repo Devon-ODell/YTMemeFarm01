@@ -49,7 +49,7 @@ TOKEN_NAME = "token.json" # Don't change
 # Setup Google 
 SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
-client_secrets_file = "resources/googleAPI.json"
+client_secrets_file = "secret.json"
 
 def routine():
 
@@ -68,7 +68,7 @@ def routine():
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
                 client_secrets_file, SCOPES)
-            creds = flow.run_console()
+            creds = flow.run_local_server(port=8000)
         # Save the credentials for the next run 
         with open(TOKEN_NAME, 'w') as token:
             token.write(creds.to_json())
@@ -94,7 +94,7 @@ def routine():
     print("Scraped Videos!")
     
     description = "Enjoy the memes! :) \n\n" \
-    "like and subscribe to @Chewy for more \n\n" \
+    "like and subscribe to @MemeFarm01 for more \n\n" \
 
     # Step 2: Make Compilation
     print("Making Compilation...")

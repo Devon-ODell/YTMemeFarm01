@@ -1,5 +1,11 @@
 # Default ignored files
 /shelf/
-/workspace.xml
+/workspace.xml  
 
+# Ignore config files
 config.py
+__pycache__/
+.idea/
+
+# Ignore sensitive API keys and credentials
+secret.json
